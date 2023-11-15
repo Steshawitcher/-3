@@ -1,0 +1,11 @@
+n=int(input())
+h=[]
+for t in range(1, n):
+    for j in range(0, t):
+        h.append(t)
+while n<len(h):
+    h.pop(-1)
+if n==1:
+    print(1)
+else:
+    print("".join(str(h)))
