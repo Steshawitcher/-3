@@ -1,0 +1,15 @@
+def gnome_sort(f):
+    stop=False
+    while stop==False:
+        stop=True
+        for i in range(0, len(f)-1):
+            if f[i]> f[i+1]:
+                f[i], f[i+1] = f[i+1], f[i]
+                stop=False
+                break
+
+
+f=list(map(int, input().split()))
+j=f.copy()
+gnome_sort(j)
+print(j)
