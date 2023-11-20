@@ -1,0 +1,16 @@
+n=int(input())
+k=int(input())
+d=list(bin(n))
+d.pop(0)
+d.pop(0)
+if k>0:
+    for i in range(0, k-1):
+        d.insert(-1, d[0])
+        d.pop(0)
+else:
+    d.reverse()
+    for i in range(0, k-1):
+        d.insert(-1, d[0])
+        d.pop(0)
+    d.reverse()
+print(int("".join(d), 2))
