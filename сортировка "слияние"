@@ -1,0 +1,19 @@
+def tobick(a, b):
+    a.sort()
+    b.sort()
+    while len(a)>0 and len(b)>0:
+        if a[0]>b[0]:
+            j.append(b[0])
+            b.pop(0)
+        else:
+            j.append(a[0])
+            a.pop(0)
+    for i in range(0, len(b)):
+        j.append(b[i])
+    for k in range(0, len(a)):
+        j.append(a[k])
+j=[]
+l=list(map(int, input().split()))
+h=list(map(int, input().split()))
+tobick(l, h)
+print(j)
