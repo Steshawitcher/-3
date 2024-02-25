@@ -1,0 +1,23 @@
+#include <iostream>
+#include <string>
+#include <cstring>
+void sort(char *a) {
+    int j = strlen(a);
+    if (islower(a[0])) {  
+        a[0]=toupper(a[0]);
+       }
+    for (int i=1; i<j; i++){
+       if (a[i]!='_' &&  isupper(a[i])) {
+           a[i]=tolower(a[i]);
+          
+          }
+    }
+    }    
+    
+int main(){
+    char arr[10000];
+    std::cin>>arr;
+    sort(arr);
+    std::cout<<arr;
+    return 0;
+}
