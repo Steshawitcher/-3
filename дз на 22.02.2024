@@ -8,12 +8,13 @@ void sort(char *a) {
        }
     for (int i=1; i<j; i++){
        if (a[i]!='_' &&  isupper(a[i])) {
-           a[i]=tolower(a[i]);
-          
+           a[i]=tolower(a[i]); 
+       }
+       if (a[i-2]=='.' || a[i-2]=='!' || a[i-2]=='?') {
+              a[i]=toupper(a[i]); 
+           }
           }
     }
-    }    
-    
 int main(){
     char arr[10000];
     std::cin>>arr;
