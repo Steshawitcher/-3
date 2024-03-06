@@ -1,0 +1,37 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+int min(int *j, int k) {
+    int r= j[0];
+    for (int i =0; i<k; i++ ) {
+        if (j[i]<r) {
+            r= j[i];
+        }
+    }
+    return r;
+}
+int main() {
+    int t[100000];
+    int n=0;
+    int u;
+    int y;
+    cin >> y;
+    while (y>0) {
+        cin >>u;
+        if (u==1) {
+            int p;
+        cin >> p;
+        t[n]=p;
+        n++;
+        }
+        if (u==2) {
+            
+            n--;
+        }
+        if (u==3) {
+            cout << min(t, n);
+        }
+        y--;
+    }
+    return 0;
+}
