@@ -1,37 +1,45 @@
 #include <iostream>
-#include <vector>
-using namespace std;
-int min(int *j, int k) {
-    int r= j[0];
-    for (int i =0; i<k; i++ ) {
-        if (j[i]<r) {
-            r= j[i];
-        }
+#include <limits>
+typedef struct node_t {
+    int value;
+    int min;
+    struct node_t* next;
+} node;
+node* create_node(int value, int min, node *head) {
+    return new node (value, ((*head)->min <value) ? (*head) -> min :value, head);
+}
+void append(node** head, int value) {
+    if (*head = nullptr) {
+        *head = crate_node(value, value, *head);
+    } else {
+        *head = create_node(value, *head);
     }
-    return r;
+}
+int pop(node** head) {
+    node *tmp = *head;
+    *head = (*head) -> next;
+    deleate tmp;
+}
+int min(node** head) {
+    return (*head) -> min;
 }
 int main() {
-    int t[100000];
-    int n=0;
-    int u;
-    int y;
-    cin >> y;
-    while (y>0) {
-        cin >>u;
-        if (u==1) {
-            int p;
-        cin >> p;
-        t[n]=p;
-        n++;
+    int a* = new int[1000];
+    int n, command, val;
+    std:: cin>>n;
+    node* head = nullptr;
+    for (int i =0; i<n; ++i){
+        std::cin>>command;
+        if (command ==1) {
+            std:: cin>>val;
+            append(head, val);
         }
-        if (u==2) {
-            
-            n--;
+        if (command ==2) {
+            pop(head);
         }
-        if (u==3) {
-            cout << min(t, n);
+        if (command ==3) {
+            min(head);
         }
-        y--;
     }
     return 0;
 }
