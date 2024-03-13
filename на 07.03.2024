@@ -6,16 +6,16 @@ typedef struct node_t {
     struct node_t* next;
 } node;
 node* create_node(int value, int min, node *head) {
-    return new node (value, ((*head)->min <value) ? (*head) -> min :value, head);
+    return new node(value, min, head);
 }
 void append(node** head, int value) {
     if (*head = nullptr) {
-        *head = crate_node(value, value, *head);
+        *head = create_node(value, value, *head);
     } else {
-        *head = create_node(value, *head);
+        *head = create_node(value, ((*head)->min <value) ? (*head) -> min :value, *head);
     }
 }
-int pop(node** head) {
+void pop(node** head) {
     node *tmp = *head;
     *head = (*head) -> next;
     deleate tmp;
