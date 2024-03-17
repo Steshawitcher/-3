@@ -1,0 +1,40 @@
+#include <iostream>
+#include <limits>
+typedef struct node_t {
+    int value;
+    int min;
+    struct node_t *next;
+    }
+} node;
+typedef struct qu_t {
+    node *first;
+    node *last;
+}
+node *createNode(int value, node *head) {
+    return new node{value, head};
+}
+void append(int n, qu **q ) {
+    if (*q = nullptr) {
+        node *tmp = createNode(n, head:nullptr);
+        *q= new qu {tmp, tmp};
+    } else {
+        (*q) -> last-> next = createNode(number, head: nullptr);
+        (*q) ->last = (*q) ->last ->next;
+    }
+}
+int pop(qu *q) {
+    int res = q -> first ->value;
+    q-> first = q->first -> next;
+    return res;
+}
+bool islast(qu *q) {
+    return (q->last == q-> first);
+}
+
+int main() {
+   qu *q = nullptr;
+   int r, k;
+   std:: cin<< r;
+   std:: cin <<k;
+    return 0;
+}
