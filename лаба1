@@ -1,0 +1,50 @@
+#include <iostream>
+#include <limits>
+typedef struct node_t {
+    int value;
+    int min;
+    struct node_t *next;
+    node_t(int v, int m, struct node_t *n) {
+        value=v;
+        min=m;
+        next=n;
+    }
+} node;
+node* create_node(int value, int min, node *head) {
+    return new node(value, min, head);
+}
+void append(node** head, int value) {
+    if (*head = nullptr) {
+        *head = create_node(value, value, *head);
+    } else {
+        *head = create_node(value, ((*head)->min <value) ? (*head) -> min :value, *head);
+    }
+}
+void pop(node** head) {
+    node *tmp = *head;
+    *head = (*head) -> next;
+    delete tmp;
+}
+int min(node** head) {
+    return (*head) -> min;
+}
+int main() {
+    int *a = new int[1000];
+    int n, command, val;
+    std:: cin>>n;
+    node* head = nullptr;
+    for (int i =0; i<n; ++i){
+        std::cin>>command;
+        if (command ==1) {
+            std:: cin>>val;
+            append(&head, val);
+        }
+        if (command ==2) {
+            pop(&head);
+        }
+        if (command ==3) {
+            min(&head);
+        }
+    }
+    return 0;
+}
