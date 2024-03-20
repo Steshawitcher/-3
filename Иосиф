@@ -1,0 +1,39 @@
+#include <iostream>
+#include <limits>
+typedef struct node_t {
+    int val;
+      struct node_t *next, *prev;
+      node_t(int v, node_t *m,  node_t *n) {
+        val=v;
+        prev=n;
+        next=m;
+    }
+
+} node;
+node *create(int n) {
+    node* p;
+    node* pp;
+    node* f = new node (1,nullptr,nullptr);
+    pp=f;
+    for (int i=2; i<n; i++) {
+        p= new node (i, nullptr, pp); 
+        pp->next=p;
+        pp=p;
+    }
+    pp->next =f;
+    f->prev=pp;
+    return f;
+}
+int pop(int n, int k, node *f) {
+    node *p=f;
+    node *pp;
+    for (int i=2; i<n; i++) {
+        for (int j=0; j<k; j++) {
+            p=p->next;
+        }
+        p->next-> prev=p->prev;
+        p->prev->next= p->next;
+        pp=p->next;
+        delete p;
+        p=pp;
+    }
